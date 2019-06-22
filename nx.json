@@ -8,9 +8,6 @@
     "nx.json": "*"
   },
   "projects": {
-    "wallaby-poc-test-e2e": {
-      "tags": []
-    },
     "wallaby-poc-test": {
       "tags": []
     },
