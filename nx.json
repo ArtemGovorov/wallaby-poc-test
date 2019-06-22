@@ -1,0 +1,24 @@
+{
+  "npmScope": "wallaby-poc-test",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "wallaby-poc-test-e2e": {
+      "tags": []
+    },
+    "wallaby-poc-test": {
+      "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interface": {
+      "tags": []
+    }
+  }
+}
