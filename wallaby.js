@@ -38,7 +38,7 @@ module.exports = function(wallaby) {
       const { compilerOptions } = require('./tsconfig')
       const jestConfig = require("./jest.config")
       jestConfig.setupFilesAfterEnv = ["./test-setup.ts"]
-      jestConfig.moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths)
+      jestConfig.moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' })
       wallaby.testFramework.configure(jestConfig)
     },
 
