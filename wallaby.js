@@ -3,7 +3,9 @@ module.exports = function(wallaby) {
     files: [
       "test-setup.ts",
       "jest.config.js",
-      "src/**/*.+(ts|css|html)",
+      "tsconfig.json",
+      "apps/**/*.+(ts|css|html)",
+      "libs/**/*.+(ts|css|html)",
       "!**/*.spec.ts",
       "!**/node_modules/**/*",
       "!**/dist/**/*"
@@ -32,8 +34,11 @@ module.exports = function(wallaby) {
     },
 
     setup: function(wallaby) {
+      const { pathsToModuleNameMapper } = require('ts-jest')
+      const { compilerOptions } = require('./tsconfig')
       const jestConfig = require("./jest.config")
       jestConfig.setupFilesAfterEnv = ["./test-setup.ts"]
+      jestConfig.moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths)
       wallaby.testFramework.configure(jestConfig)
     },
 
